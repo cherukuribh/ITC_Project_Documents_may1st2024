@@ -1,0 +1,16 @@
+/opt/cloudera/parcels/CDH/bin/spark-submit kafkanew.py
+
+kafka-topics --bootstrap-server ip-172-31-13-101.eu-west-2.compute.internal:9092, ip-172-31-3-80.eu-west-2.compute.internal:9092, ip-172-31-5-217.eu-west-2.compute.internal:9092, ip-172-31-9-237.eu-west-2.compute.internal:9092 --create --topic trans --partitions 1 --replication-factor 1
+
+kafka-console-consumer --bootstrap-server ip-172-31-13-101.eu-west-2.compute.internal:9092, ip-172-31-3-80.eu-west-2.compute.internal:9092, ip-172-31-5-217.eu-west-2.compute.internal:9092, ip-172-31-9-237.eu-west-2.compute.internal:9092 --topic trans --group transtatus 
+
+kafka-console-producer --bootstrap-server ip-172-31-13-101.eu-west-2.compute.internal:9092, ip-172-31-3-80.eu-west-2.compute.internal:9092, ip-172-31-5-217.eu-west-2.compute.internal:9092, ip-172-31-9-237.eu-west-2.compute.internal:9092 --topic trans
+
+
+12344,233.44,Failed,2024-04-29 20:55:52
+12344,345.43,Success,2024-04-29 20:55:53
+12342,23.3,Failed,2024-04-29 20:56:54
+12345,23.3,Failed,2024-04-29 20:58:54
+12346,23.3,Success,2024-04-29 20:59:54
+12346,23.3,Failed,2024-04-29 21:01:54
+12345,23.3,Success,2024-04-29 22:05:54
